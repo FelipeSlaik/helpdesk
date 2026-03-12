@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from chamados.views import lista_chamados
+from chamados.views import lista_chamados, novo_chamado,  excluir_chamado
 
 urlpatterns = [
+    path('', lista_chamados), 
     path('admin/', admin.site.urls),
     path('chamados/', lista_chamados),
+    path('chamados/novo/', novo_chamado),
+    path('chamados/excluir/<int:id>/', excluir_chamado),
 ]

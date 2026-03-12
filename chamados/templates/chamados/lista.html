@@ -1,7 +1,20 @@
 <h1>Chamados</h1>
 
-<ul>
-    {% for chamado in chamados %}
-    <li>{{ chamado.titulo }}</li>
-    {% endfor %}
-</ul>
+<a href="/chamados/novo">
+    <button>Novo chamado</button>
+</a>
+
+{% for chamado in chamados %}
+
+<h3>{{ chamado.titulo }}</h3>
+
+<p>{{ chamado.descricao }}</p>
+
+<p>Prioridade: {{ chamado.prioridade }}</p>
+
+<a href="/chamados/excluir/{{ chamado.id }}">
+        <button>Excluir</button>
+</a>
+<hr>
+
+{% endfor %}
